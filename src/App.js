@@ -1,11 +1,15 @@
-import '..styles/App.css';
+import './styles/App.css';
+import React, { Component } from 'react';
+import GeneralInfo from './components/GeneralInfo';
 
-function App() {
-  return (
-    <div>
-      <h1>React 18 Alpha</h1>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="cv">
+        <GeneralInfo />
+      </div>
+    );
+  }
 }
 
 export default App;
