@@ -16,6 +16,12 @@ class GeneralInfo extends Component {
           />
           <input
             type="text"
+            name="title"
+            placeholder="The role you're applying for"
+            onChange={onChange}
+          />
+          <input
+            type="text"
             name="phone"
             placeholder="Phone"
             onChange={onChange}
@@ -41,7 +47,7 @@ class GeneralInfo extends Component {
           <input
             type="file"
             name="photo"
-            placeholder="Photo"
+            accept="image/*"
             onChange={onChange}
           />
         </form>

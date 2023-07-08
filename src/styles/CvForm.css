@@ -1,58 +1,95 @@
-.previewBtn {
-    position: fixed;
-    left: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .previewBtn:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .previewBtn .icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .preview {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 140px;
-    width: 794px;
-    height: 1123px;
-    background-color: #ffffff;
-    padding: 30px;
-    margin: 20px auto;
-    box-shadow: 0 0 200px 200px rgba(0, 0, 0, 0.4);
-  }
-  
-  .preview.on {
-    display: block;
-  }
-  
-  .cv {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 794px;
-    min-height: 1123px;
-    height: 100%;
-    background-color: #ffffff;
-    padding: 30px;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    color: #333;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.previewBtn,
+.previewBtnInside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.previewBtn:hover,
+.previewBtnInside:hover {
+  background-color: #821e1e;
+}
+
+.previewBtn .icon,
+.previewBtnInside .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.cv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 794px;
+  min-height: 1123px;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 30px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.previewContainer {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.previewContainer.on {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.btns {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.downloadBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 100px;
+  height: 60px;
+  border-radius: 10%;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.downloadBtn:hover {
+  color: #ffffff;
+  background-color: #821e1e;
+}
