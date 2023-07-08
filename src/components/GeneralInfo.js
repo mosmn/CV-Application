@@ -1,54 +1,72 @@
 import "../styles/GeneralInfo.css";
+import React, { Component } from "react";
+import Cv from "./Cv";
 
-const GeneralInfo = () => {
-  return (
-    <form className="general-info">
-      <h2>General Information</h2>
-      <div className="general-info__container">
-        <div className="general-info__container__left">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" />
-          <label htmlFor="email">Email</label>
+class GeneralInfo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      location: "",
+      photo: "",
+    };
+  }
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  render() {
+    return (
+      <div className="general-info">
+        <form className="general-info">
           <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your email"
+            type="text"
+            name="name"
+            placeholder="Name"
+            onChange={this.onChange}
           />
-          <label htmlFor="phone">Phone</label>
           <input
-            type="tel"
-            id="phone"
+            type="text"
             name="phone"
-            placeholder="Your phone number"
+            placeholder="Phone"
+            onChange={this.onChange}
           />
-        </div>
-        <div className="general-info__container__right">
-          <label htmlFor="address">Address</label>
           <input
             type="text"
-            id="address"
-            name="address"
-            placeholder="Your address"
+            name="email"
+            placeholder="Email"
+            onChange={this.onChange}
           />
-          <label htmlFor="linkedin">LinkedIn</label>
           <input
             type="text"
-            id="linkedin"
             name="linkedin"
-            placeholder="Your LinkedIn profile"
+            placeholder="LinkedIn"
+            onChange={this.onChange}
           />
-          <label htmlFor="github">GitHub</label>
           <input
             type="text"
-            id="github"
-            name="github"
-            placeholder="Your GitHub profile"
+            name="location"
+            placeholder="Location"
+            onChange={this.onChange}
           />
-        </div>
+          <input
+            type="file"
+            name="photo"
+            placeholder="Photo"
+            onChange={this.onChange}
+          />
+        </form>
+        <Cv {...this.state} />
       </div>
-    </form>
-  );
-};
+    );
+  }
+}
 
 export default GeneralInfo;
