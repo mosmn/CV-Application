@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 class GeneralInfo extends Component {
   render() {
-    const {onChange} = this.props;
+    const { onChange } = this.props;
 
     return (
       <div className="general-info">
