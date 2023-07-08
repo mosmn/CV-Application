@@ -3,6 +3,23 @@
   left: 50px;
 }
 
+.preview {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    width: 794px;
+    height: 1123px;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 20px auto;
+    box-shadow: 0 0 1000px rgba(0, 0, 0, 0.8);
+}
+
+.preview.on {
+  display: block;
+}
+
 .cv {
   display: flex;
   flex-direction: column;
