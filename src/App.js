@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import React, { Component } from "react";
-import GeneralInfo from "./components/GeneralInfo";
+import CvForm from "./components/CvForm";
+import CvPreview from "./components/CvPreview";
 
 class App extends Component {
   constructor(props) {
@@ -11,17 +12,17 @@ class App extends Component {
     };
   }
 
-  
   render() {
     return (
-      <div className="cv">
+      <div>
         <div className="preview">
           <img
             src="https://fontawesome.com/icons/eye?f=sharp&s=regular"
             alt="preview"
           />
         </div>
-        <GeneralInfo />
+        <CvForm />
+        <CvPreview />
       </div>
     );
   }

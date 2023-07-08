@@ -1,6 +1,6 @@
-import "../styles/Cv.css";
+import "../styles/CvPreview.css";
 
-const Cv = (props) => {
+const CvPreview = (props) => {
   const { name, phone, email, linkedin, location, photo } = props;
   return (
     <div className="print">
@@ -14,4 +14,4 @@ const Cv = (props) => {
   );
 };
 
-export default Cv;
+export default CvPreview;
