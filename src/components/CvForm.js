@@ -178,6 +178,7 @@ class CvForm extends Component {
               {...generalInfo}
               imagePreviewUrl={imagePreviewUrl}
               summary={summary}
+                experience={experience}
             />
           </div>
         </div>
