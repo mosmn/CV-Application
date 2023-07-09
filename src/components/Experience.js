@@ -10,8 +10,8 @@ class Experience extends Component {
     };
   }
 
-  handleFocus = () => {
-    this.setState({ isFocused: true });
+  handleFocus = (index) => {
+    this.setState({ focusedIndex: index });
   };
 
   handleBlur = () => {
@@ -27,12 +27,12 @@ class Experience extends Component {
       <div>
         <div
           className="experiences-container"
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
         >
           {experience.map((item, i) => (
             <div key={item.id}>
-              <form className={`experience-form ${isFocused ? "focused" : ""}`}>
+              <form className={`experience-form ${isFocused ? "focused" : ""}`}
+              onFocus={() => this.handleFocus(i)}
+              onBlur={this.handleBlur}>
                 <div className="job-title">
                   <input
                     type="text"
@@ -67,28 +67,28 @@ class Experience extends Component {
                   />
                 </div>
                 <div className="dates">
-                <div className="from">
+                  <div className="from">
                     <label htmlFor="from">From</label>
-                  <input
-                    type="date"
-                    name="from"
-                    placeholder="From"
-                    data-index={i}
-                    value={item.from}
-                    onChange={onExperienceChange}
-                  />
-                </div>
-                <div className="to">
+                    <input
+                      type="date"
+                      name="from"
+                      placeholder="From"
+                      data-index={i}
+                      value={item.from}
+                      onChange={onExperienceChange}
+                    />
+                  </div>
+                  <div className="to">
                     <label htmlFor="to">To</label>
-                  <input
-                    type="date"
-                    name="to"
-                    placeholder="To"
-                    data-index={i}
-                    value={item.to}
-                    onChange={onExperienceChange}
-                  />
-                </div>
+                    <input
+                      type="date"
+                      name="to"
+                      placeholder="To"
+                      data-index={i}
+                      value={item.to}
+                      onChange={onExperienceChange}
+                    />
+                  </div>
                 </div>
                 <div className="description">
                   <textarea

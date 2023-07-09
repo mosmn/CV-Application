@@ -42,8 +42,9 @@ const CvPreview = (props) => {
             <div className="job-title-preview">{item.jobTitle}</div>
             <div className="company-preview">{item.company}</div>
             <div className="city-preview">{item.city}</div>
-            <div className="from-preview">{item.from}</div>
-            <div className="to-preview">{item.to}</div>
+            <div className="dates-preview">
+              {item.from} - {item.to}
+            </div>
             <div className="description-preview">{item.description}</div>
             </div>
         ))}

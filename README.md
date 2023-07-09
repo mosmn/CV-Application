@@ -30,5 +30,3 @@ Throughout the project, some challenges were encountered and overcome. These cha
 - Understanding and implementing class components in React.
 - Managing state and props to handle user input and display data.
 - Styling and organizing components and CSS files.
-
-

@@ -100,28 +100,27 @@
 .summary-text {
   font-size: 1rem;
 }
-  
-  .job-title-preview {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .company-preview {
-    font-size: 1rem;
-    color: #777777;
-  }
-  
-  .city-preview {
-    font-size: 1rem;
-    color: #777777;
-  }
-  
-  .dates-preview {
-    font-size: 1rem;
-    color: #777777;
-  }
-  
-  .description-preview {
-    font-size: 1rem;
-  }
-  
+
+.job-title-preview {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.company-preview {
+  font-size: 1rem;
+  color: #777777;
+}
+
+.city-preview {
+  font-size: 1rem;
+  color: #777777;
+}
+
+.dates-preview {
+  font-size: 1rem;
+  color: #777777;
+}
+
+.description-preview {
+  font-size: 1rem;
+}

@@ -35,6 +35,15 @@ class CvForm extends Component {
           description: "",
         },
       ],
+      education: [
+        {
+            id: uniqid(),
+            degree: "",
+            school: "",
+            from: "",
+            to: "",
+        },
+        ],
     };
   }
 
@@ -178,7 +187,7 @@ class CvForm extends Component {
               {...generalInfo}
               imagePreviewUrl={imagePreviewUrl}
               summary={summary}
-                experience={experience}
+              experience={experience}
             />
           </div>
         </div>
