@@ -16,7 +16,8 @@ class CvForm extends Component {
         email: "",
         linkedin: "",
         location: "",
-        photo: "",
+        file: "",
+        imagePreviewUrl: "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
       },
     };
   }
@@ -25,6 +26,19 @@ class CvForm extends Component {
     const preview = document.querySelector(".previewContainer");
     preview.classList.toggle("on");
   };
+
+  photoUpload = e =>{
+    e.preventDefault();
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result
+      });
+    }
+    reader.readAsDataURL(file);
+  }
 
   onChange = (e) => {
     this.setState({
@@ -48,7 +62,7 @@ class CvForm extends Component {
   };
 
   render() {
-    const { generalInfo } = this.state;
+    const { generalInfo, imagePreviewUrl } = this.state;
 
     return (
       <div>
@@ -61,7 +75,7 @@ class CvForm extends Component {
             />
           </div>
           <div className="cv">
-            <GeneralInfo onChange={this.onChange} />
+            <GeneralInfo onChange={this.onChange} uploadPic={this.photoUpload} src={imagePreviewUrl} />
           </div>
         </div>
         <div className="previewContainer">

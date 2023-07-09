@@ -3,12 +3,13 @@ import React, { Component } from "react";
 
 class GeneralInfo extends Component {
   render() {
-    const { onChange } = this.props;
+    const { onChange, uploadPic, src } = this.props;
 
     return (
-      <div className="general-info">
+      <div>
         <form className="general-info">
-          <input
+            <div className="info">
+            <input
             type="text"
             name="name"
             placeholder="Name"
@@ -44,12 +45,15 @@ class GeneralInfo extends Component {
             placeholder="Location"
             onChange={onChange}
           />
-          <input
-            type="file"
-            name="photo"
-            accept="image/*"
-            onChange={onChange}
-          />
+            </div>
+            <div className="photo">
+                <label htmlFor="photo" className="photoLabel">
+                    <div className="img-wrap img-upload">
+                        <img for="photo-upload" src={src} alt="pp"/>
+                    </div>
+                    <input id="photo-upload" type="file" onChange={uploadPic} />
+                </label>
+            </div>
         </form>
       </div>
     );
