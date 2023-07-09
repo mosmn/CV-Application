@@ -77,11 +77,15 @@
   height: 100%;
 }
 
-.summary-preview {
+.summary-preview,
+.experience-preview,
+.education-preview {
   margin: 10px 40px;
 }
 
-.summary-title {
+.summary-title,
+.experience-title,
+.education-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: #b15a5a;
@@ -96,3 +100,28 @@
 .summary-text {
   font-size: 1rem;
 }
+  
+  .job-title-preview {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .company-preview {
+    font-size: 1rem;
+    color: #777777;
+  }
+  
+  .city-preview {
+    font-size: 1rem;
+    color: #777777;
+  }
+  
+  .dates-preview {
+    font-size: 1rem;
+    color: #777777;
+  }
+  
+  .description-preview {
+    font-size: 1rem;
+  }
+  

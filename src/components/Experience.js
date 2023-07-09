@@ -26,13 +26,13 @@ class Experience extends Component {
     return (
       <div>
         <div
-          className={`experience ${isFocused ? "focused" : ""}`}
+          className="experiences-container"
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         >
           {experience.map((item, i) => (
             <div key={item.id}>
-              <form className="experience-input">
+              <form className={`experience-form ${isFocused ? "focused" : ""}`}>
                 <div className="job-title">
                   <input
                     type="text"
@@ -66,9 +66,11 @@ class Experience extends Component {
                     onChange={onExperienceChange}
                   />
                 </div>
+                <div className="dates">
                 <div className="from">
+                    <label htmlFor="from">From</label>
                   <input
-                    type="text"
+                    type="date"
                     name="from"
                     placeholder="From"
                     data-index={i}
@@ -77,8 +79,9 @@ class Experience extends Component {
                   />
                 </div>
                 <div className="to">
+                    <label htmlFor="to">To</label>
                   <input
-                    type="text"
+                    type="date"
                     name="to"
                     placeholder="To"
                     data-index={i}
@@ -86,11 +89,12 @@ class Experience extends Component {
                     onChange={onExperienceChange}
                   />
                 </div>
+                </div>
                 <div className="description">
                   <textarea
                     type="text"
                     name="description"
-                    placeholder="Description"
+                    placeholder="What did you do?"
                     data-index={i}
                     value={item.description}
                     onChange={onExperienceChange}

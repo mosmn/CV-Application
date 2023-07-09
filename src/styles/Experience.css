@@ -1,0 +1,73 @@
+.experiences-container {
+    margin-top: 5px;
+  }
+  
+  .experience-form {
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    &:hover {
+        border: 1px solid #b15a5a;
+      }
+  }
+  
+  .experience-form.focused {
+    border: 2px solid #b15a5a;
+  }
+
+  input,
+  textarea {
+    border: none;
+    outline: none;
+  } 
+
+  textarea {
+    padding: 10px;
+    resize: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    background-color: #f8f8f8;
+  }
+  
+  .job-title input,
+  .company input,
+  .city input,
+  .description textarea {
+    padding: 5px;
+    width: 580px;
+  }
+
+  .job-title input,
+  .job-title input::placeholder {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .job-title input::placeholder {
+    color: #bcbcbc;
+    }
+
+    .company input,
+    .company input::placeholder,
+    .city input,
+    .city input::placeholder {
+    font-size: 1rem;
+    color: #777777;
+    }
+
+    .company input::placeholder,
+    .city input::placeholder {
+    font-weight: 600;
+    }
+
+  
+  .dates {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  
