@@ -3,7 +3,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+
+  &:hover {
+    border: 1px solid #b15a5a;
+  }
 }
+
+.general-info.focused {
+    border: 2px solid #b15a5a;
+  }
 
 .info {
   display: grid;

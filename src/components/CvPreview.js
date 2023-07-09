@@ -1,7 +1,7 @@
 import "../styles/CvPreview.css";
 
 const CvPreview = (props) => {
-  const { name, title, phone, email, linkedin, location, file, imagePreviewUrl } = props;
+  const { name, title, phone, email, linkedin, location, imagePreviewUrl } = props;
   return (
     <div className="print">
       <div className="general-info-preview">

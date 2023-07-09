@@ -2,12 +2,30 @@ import "../styles/GeneralInfo.css";
 import React, { Component } from "react";
 
 class GeneralInfo extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          isFocused: false,
+        };
+      }
+    
+      handleFocus = () => {
+        this.setState({ isFocused: true });
+      };
+    
+      handleBlur = () => {
+        this.setState({ isFocused: false });
+      };
+
   render() {
     const { onChange, uploadPic, src } = this.props;
+    const { isFocused } = this.state;
 
     return (
       <div>
-        <form className="general-info">
+        <form className={`general-info ${isFocused ? "focused" : ""}`} onFocus={this.handleFocus}
+        onBlur={this.handleBlur}>
           <div className="info">
             <input
               type="text"

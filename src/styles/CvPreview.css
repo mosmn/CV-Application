@@ -21,10 +21,10 @@
     grid-template-areas:
       "name name"
       "title title"
-      "email phone"
+      "phone email"
       "linkedin location";
     justify-self: flex-start;
-    width: 100%;
+    width: 66%;
   }
   
   .photo-preview {
