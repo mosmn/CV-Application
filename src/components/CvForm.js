@@ -2,8 +2,10 @@ import "../styles/CvForm.css";
 import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo";
 import Summary from "./Summary";
+import Experience from "./Experience";
 import CvPreview from "./CvPreview";
 import html2pdf from "html2pdf.js";
+import uniqid from "uniqid";
 
 class CvForm extends Component {
   constructor(props) {
@@ -22,6 +24,17 @@ class CvForm extends Component {
           "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
       },
       summary: "",
+      experience: [
+        {
+          id: uniqid(),
+          jobTitle: "",
+          company: "",
+          city: "",
+          from: "",
+          to: "",
+          description: "",
+        },
+      ],
     };
   }
 
@@ -59,6 +72,51 @@ class CvForm extends Component {
     });
   };
 
+  onExperienceChange = (e) => {
+    const { name, value } = e.target;
+    const { experience } = this.state;
+    const index = e.target.dataset.index;
+    const updatedExperience = experience.map((item, i) => {
+      if (index === i) {
+        return {
+          ...item,
+          [name]: value,
+        };
+      }
+      return item;
+    });
+    this.setState({
+      experience: updatedExperience,
+    });
+  };
+
+  addExperience = (e) => {
+    e.preventDefault();
+    const { experience } = this.state;
+    const newExperience = {
+      id: uniqid(),
+      jobTitle: "",
+      company: "",
+      city: "",
+      from: "",
+      to: "",
+      description: "",
+    };
+    this.setState({
+      experience: [...experience, newExperience],
+    });
+  };
+
+  removeExperience = (e) => {
+    e.preventDefault();
+    const { experience } = this.state;
+    const index = e.target.dataset.index;
+    const updatedExperience = experience.filter((item, i) => index !== i);
+    this.setState({
+      experience: updatedExperience,
+    });
+  };
+
   downloadAsPdf = () => {
     const cv = document.querySelector(".print");
     const options = {
@@ -72,7 +130,7 @@ class CvForm extends Component {
   };
 
   render() {
-    const { generalInfo, imagePreviewUrl, summary } = this.state;
+    const { generalInfo, imagePreviewUrl, summary, experience } = this.state;
 
     return (
       <div>
@@ -94,6 +152,11 @@ class CvForm extends Component {
               <div className="title">Summary</div>
               <div className="line"></div>
               <Summary onSummaryChange={this.onSummaryChange} />
+            </div>
+            <div className="experience">
+              <div className="title">Experience</div>
+              <div className="line"></div>
+                <Experience experience={experience} onExperienceChange={this.onExperienceChange} addExperience={this.addExperience} removeExperience={this.removeExperience} />
             </div>
           </div>
         </div>
