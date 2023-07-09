@@ -2,13 +2,34 @@ import "../styles/Experience.css";
 import React, { Component } from "react";
 
 class Experience extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isFocused: false,
+    };
+  }
+
+  handleFocus = () => {
+    this.setState({ isFocused: true });
+  };
+
+  handleBlur = () => {
+    this.setState({ isFocused: false });
+  };
+
   render() {
     const { experience, onExperienceChange, addExperience, removeExperience } =
       this.props;
+    const { isFocused } = this.state;
 
     return (
       <div>
-        <div className="experience">
+        <div
+          className={`experience ${isFocused ? "focused" : ""}`}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+        >
           {experience.map((item, i) => (
             <div key={item.id}>
               <form className="experience-input">
