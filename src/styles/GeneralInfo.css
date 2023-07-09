@@ -12,8 +12,8 @@
 }
 
 .general-info.focused {
-    border: 2px solid #b15a5a;
-  }
+  border: 2px solid #b15a5a;
+}
 
 .info {
   display: grid;

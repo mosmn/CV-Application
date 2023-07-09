@@ -2,66 +2,69 @@ import "../styles/GeneralInfo.css";
 import React, { Component } from "react";
 
 class GeneralInfo extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          isFocused: false,
-        };
-      }
-    
-      handleFocus = () => {
-        this.setState({ isFocused: true });
-      };
-    
-      handleBlur = () => {
-        this.setState({ isFocused: false });
-      };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isFocused: false,
+    };
+  }
+
+  handleFocus = () => {
+    this.setState({ isFocused: true });
+  };
+
+  handleBlur = () => {
+    this.setState({ isFocused: false });
+  };
 
   render() {
-    const { onChange, uploadPic, src } = this.props;
+    const { onInfoChange, uploadPic, src } = this.props;
     const { isFocused } = this.state;
 
     return (
       <div>
-        <form className={`general-info ${isFocused ? "focused" : ""}`} onFocus={this.handleFocus}
-        onBlur={this.handleBlur}>
+        <form
+          className={`general-info ${isFocused ? "focused" : ""}`}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+        >
           <div className="info">
             <input
               type="text"
               name="name"
               placeholder="Name"
-              onChange={onChange}
+              onChange={onInfoChange}
             />
             <input
               type="text"
               name="title"
               placeholder="The role you're applying for"
-              onChange={onChange}
+              onChange={onInfoChange}
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone"
-              onChange={onChange}
+              onChange={onInfoChange}
             />
             <input
               type="text"
               name="email"
               placeholder="Email"
-              onChange={onChange}
+              onChange={onInfoChange}
             />
             <input
               type="text"
               name="linkedin"
               placeholder="LinkedIn"
-              onChange={onChange}
+              onChange={onInfoChange}
             />
             <input
               type="text"
               name="location"
               placeholder="Location"
-              onChange={onChange}
+              onChange={onInfoChange}
             />
           </div>
           <div className="photo">

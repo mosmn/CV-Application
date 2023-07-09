@@ -8,72 +8,91 @@
 }
 
 .general-info-preview {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.info-preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 0.8fr 0.5fr 0.5fr;
+  grid-template-areas:
+    "name name"
+    "title title"
+    "phone email"
+    "linkedin location";
+  justify-self: flex-start;
+  width: 66%;
+}
+
+.photo-preview {
+  justify-self: end;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  padding: 6px;
+  background: linear-gradient(270deg, #b15a5a, #5b0707);
+}
+
+.name-preview {
+  grid-area: name;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.title-preview {
+  grid-area: title;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.phone-preview {
+  grid-area: phone;
+}
+
+.email-preview {
+  grid-area: email;
+}
+
+.linkedin-preview {
+  grid-area: linkedin;
+}
+
+.location-preview {
+  grid-area: location;
+}
+
+.img-wrap-preview {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.photo-preview img {
+  width: auto;
+  height: 100%;
+}
+
+.summary-preview {
+    margin-top: 20px;
   }
   
-  .info-preview {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 0.8fr 0.5fr 0.5fr;
-    grid-template-areas:
-      "name name"
-      "title title"
-      "phone email"
-      "linkedin location";
-    justify-self: flex-start;
-    width: 66%;
-  }
-  
-  .photo-preview {
-    justify-self: end;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    padding: 6px;
-    background: linear-gradient(270deg, #b15a5a, #5b0707);
-  }
-  
-  .name-preview {
-    grid-area: name;
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-  
-  .title-preview {
-    grid-area: title;
+  .summary-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: bold;
   }
   
-  .phone-preview {
-    grid-area: phone;
+  .line {
+    height: 2px;
+    background-color: #333;
+    margin: 10px 0;
   }
   
-  .email-preview {
-    grid-area: email;
-  }
-  
-  .linkedin-preview {
-    grid-area: linkedin;
-  }
-  
-  .location-preview {
-    grid-area: location;
-  }
-  
-  .img-wrap-preview {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  
-  .photo-preview img {
-    width: auto;
-    height: 100%;
+  .summary-text {
+    font-size: 1rem;
   }
   

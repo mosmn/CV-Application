@@ -1,6 +1,7 @@
 import "../styles/CvForm.css";
 import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo";
+import Summary from "./Summary";
 import CvPreview from "./CvPreview";
 import html2pdf from "html2pdf.js";
 
@@ -20,6 +21,7 @@ class CvForm extends Component {
         imagePreviewUrl:
           "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
       },
+      summary: "",
     };
   }
 
@@ -41,14 +43,21 @@ class CvForm extends Component {
     reader.readAsDataURL(file);
   };
 
-  onChange = (e) => {
-    this.setState({
+  onInfoChange = (e) => {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
       generalInfo: {
-        ...this.state.generalInfo,
-        [e.target.name]: e.target.value,
+        ...prevState.generalInfo,
+        [name]: value,
       },
-    });
+    }));
   };
+
+  onSummaryChange = (e) => {
+    this.setState({
+        summary: e.target.value,
+    });
+    };
 
   downloadAsPdf = () => {
     const cv = document.querySelector(".print");
@@ -63,7 +72,7 @@ class CvForm extends Component {
   };
 
   render() {
-    const { generalInfo, imagePreviewUrl } = this.state;
+    const { generalInfo, imagePreviewUrl, summary } = this.state;
 
     return (
       <div>
@@ -77,10 +86,15 @@ class CvForm extends Component {
           </div>
           <div className="cv">
             <GeneralInfo
-              onChange={this.onChange}
+              onInfoChange={this.onInfoChange}
               uploadPic={this.photoUpload}
               src={imagePreviewUrl}
             />
+            <div className="summary">
+              <div className="title">Summary</div>
+              <div className="line"></div>
+              <Summary onSummaryChange={this.onSummaryChange} />
+            </div>
           </div>
         </div>
         <div className="previewContainer">
@@ -97,7 +111,11 @@ class CvForm extends Component {
             </div>
           </div>
           <div className="preview">
-            <CvPreview {...generalInfo} imagePreviewUrl={imagePreviewUrl} />
+            <CvPreview
+              {...generalInfo}
+              imagePreviewUrl={imagePreviewUrl}
+              summary={summary}
+            />
           </div>
         </div>
       </div>
