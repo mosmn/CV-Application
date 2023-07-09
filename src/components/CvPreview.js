@@ -38,7 +38,7 @@ const CvPreview = (props) => {
         <div className="experience-title">Experience</div>
         <div className="line"></div>
         {experience.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} className="obj">
             <div className="job-title-preview">{item.jobTitle}</div>
             <div className="company-preview">{item.company}</div>
             <div className="city-preview">{item.city}</div>

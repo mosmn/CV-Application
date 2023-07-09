@@ -107,18 +107,21 @@
   background-color: #b15a5a;
 }
 
-.experience {
+.experience,
+.education {
   width: 615px;
   margin-top: 10px;
 }
 
-.experience .title {
+.experience .title,
+.education .title{
   font-size: 1.5rem;
   font-weight: bold;
   color: #b15a5a;
 }
 
-.experience .line {
+.experience .line,
+.education .line {
   height: 2px;
   background-color: #b15a5a;
 }

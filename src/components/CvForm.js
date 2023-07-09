@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import GeneralInfo from "./GeneralInfo";
 import Summary from "./Summary";
 import Experience from "./Experience";
+import Education from "./Education";
 import CvPreview from "./CvPreview";
 import html2pdf from "html2pdf.js";
 import uniqid from "uniqid";
@@ -121,6 +122,45 @@ class CvForm extends Component {
     });
   };
 
+  onEducationChange = (e) => {
+    const { name, value } = e.target;
+    const index = e.target.dataset.index;
+    const { education } = this.state;
+    const updatedEducation = [...education];
+    updatedEducation[index] = {
+        ...updatedEducation[index],
+        [name]: value,
+    };
+
+    this.setState({
+        education: updatedEducation,
+    });
+    };
+
+    addEducation = (e) => {
+        e.preventDefault();
+        const { education } = this.state;
+        const newEducation = {
+            id: uniqid(),
+            degree: "",
+            school: "",
+            from: "",
+            to: "",
+        };
+        this.setState({
+            education: [...education, newEducation],
+        });
+    };
+
+    removeEducation = (e) => {
+        const { education } = this.state;
+        const id = e.target.dataset.id;
+        const updatedEducation = education.filter((item) => item.id !== id);
+        this.setState({
+            education: updatedEducation,
+        });
+    };
+
   downloadAsPdf = () => {
     const cv = document.querySelector(".print");
     const options = {
@@ -134,7 +174,7 @@ class CvForm extends Component {
   };
 
   render() {
-    const { generalInfo, imagePreviewUrl, summary, experience } = this.state;
+    const { generalInfo, imagePreviewUrl, summary, experience, education } = this.state;
 
     return (
       <div>
@@ -166,6 +206,16 @@ class CvForm extends Component {
                 addExperience={this.addExperience}
                 removeExperience={this.removeExperience}
               />
+            </div>
+            <div className="education">
+                <div className="title">Education</div>
+                <div className="line"></div>
+                <Education
+                    education={education}
+                    onEducationChange={this.onEducationChange}
+                    addEducation={this.addEducation}
+                    removeEducation={this.removeEducation}
+                />
             </div>
           </div>
         </div>
