@@ -55,9 +55,9 @@ class CvForm extends Component {
 
   onSummaryChange = (e) => {
     this.setState({
-        summary: e.target.value,
+      summary: e.target.value,
     });
-    };
+  };
 
   downloadAsPdf = () => {
     const cv = document.querySelector(".print");

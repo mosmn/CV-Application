@@ -25,16 +25,16 @@ class Summary extends Component {
     return (
       <div>
         <form
-          className={`summary ${isFocused ? "focused" : ""}`}
+          className={`summary-input ${isFocused ? "focused" : ""}`}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         >
-            <input
-                type="text"
-                name="summary"
-                placeholder="Whats the  one thing that makes you stand out?"
-                onChange={onSummaryChange}
-            />
+          <textarea
+            type="text"
+            name="summary"
+            placeholder="Whats the  one thing that makes you stand out?"
+            onChange={onSummaryChange}
+          />
         </form>
       </div>
     );

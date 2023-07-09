@@ -78,21 +78,21 @@
 }
 
 .summary-preview {
-    margin-top: 20px;
-  }
-  
-  .summary-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .line {
-    height: 2px;
-    background-color: #333;
-    margin: 10px 0;
-  }
-  
-  .summary-text {
-    font-size: 1rem;
-  }
-  
+  margin: 10px 40px;
+}
+
+.summary-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #b15a5a;
+}
+
+.line {
+  height: 3px;
+  background-color: #b15a5a;
+  margin: 10px 0;
+}
+
+.summary-text {
+  font-size: 1rem;
+}
