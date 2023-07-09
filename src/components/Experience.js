@@ -25,14 +25,14 @@ class Experience extends Component {
 
     return (
       <div>
-        <div
-          className="experiences-container"
-        >
+        <div className="experiences-container">
           {experience.map((item, i) => (
             <div key={item.id}>
-              <form className={`experience-form ${isFocused ? "focused" : ""}`}
-              onFocus={() => this.handleFocus(i)}
-              onBlur={this.handleBlur}>
+              <form
+                className={`experience-form ${isFocused ? "focused" : ""}`}
+                onFocus={() => this.handleFocus(i)}
+                onBlur={this.handleBlur}
+              >
                 <div className="job-title">
                   <input
                     type="text"

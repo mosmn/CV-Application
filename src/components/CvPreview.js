@@ -11,6 +11,7 @@ const CvPreview = (props) => {
     imagePreviewUrl,
     summary,
     experience,
+    education,
   } = props;
   return (
     <div className="print">
@@ -46,9 +47,22 @@ const CvPreview = (props) => {
               {item.from} - {item.to}
             </div>
             <div className="description-preview">{item.description}</div>
-            </div>
+          </div>
         ))}
-        </div>
+      </div>
+      <div className="education-preview">
+        <div className="education-title">Education</div>
+        <div className="line"></div>
+        {education.map((item) => (
+          <div key={item.id} className="obj">
+            <div className="degree-preview">{item.degree}</div>
+            <div className="school-preview">{item.school}</div>
+            <div className="dates-preview">
+              {item.from} - {item.to}
+              </div>
+              </div>
+              ))}
+              </div>
     </div>
   );
 };

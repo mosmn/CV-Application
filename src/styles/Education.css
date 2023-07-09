@@ -1,0 +1,104 @@
+.educations-container {
+  margin-top: 4px;
+}
+
+.education-form {
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 7px;
+  margin-bottom: 8px;
+
+  &:hover {
+    border: 1px solid #b15a5a;
+  }
+}
+
+.education-form.focused {
+  border: 2px solid #b15a5a;
+}
+
+.education-form input,
+.education-form textarea {
+  border: none;
+  outline: none;
+}
+
+.education-form textarea {
+  padding: 10px;
+  resize: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background-color: #f8f8f8;
+}
+
+.degree input,
+.school input,
+.dates input[type="text"] {
+  padding: 5px;
+  width: 580px;
+}
+
+.degree input,
+.degree input::placeholder {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.degree input::placeholder {
+  color: #bcbcbc;
+}
+
+.school input,
+.school input::placeholder,
+.dates input[type="text"]::placeholder {
+  font-size: 1rem;
+  color: #777777;
+}
+
+.school input::placeholder,
+.dates input[type="text"]::placeholder {
+  font-weight: 600;
+}
+
+.dates {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 5px;
+}
+
+.dates input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-btn,
+.remove-btn {
+  display: none;
+}
+
+.education-form:hover .remove-btn,
+.education:hover .add-btn {
+  display: block;
+}
+
+.add-btn button,
+.remove-btn button {
+  background-color: #b15a5a;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-btn button:hover,
+.remove-btn button:hover {
+  background-color: #5b0707;
+  transition: background-color 0.3s ease;
+}

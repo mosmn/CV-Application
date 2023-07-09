@@ -38,13 +38,13 @@ class CvForm extends Component {
       ],
       education: [
         {
-            id: uniqid(),
-            degree: "",
-            school: "",
-            from: "",
-            to: "",
+          id: uniqid(),
+          degree: "",
+          school: "",
+          from: "",
+          to: "",
         },
-        ],
+      ],
     };
   }
 
@@ -128,38 +128,38 @@ class CvForm extends Component {
     const { education } = this.state;
     const updatedEducation = [...education];
     updatedEducation[index] = {
-        ...updatedEducation[index],
-        [name]: value,
+      ...updatedEducation[index],
+      [name]: value,
     };
 
     this.setState({
-        education: updatedEducation,
+      education: updatedEducation,
     });
-    };
+  };
 
-    addEducation = (e) => {
-        e.preventDefault();
-        const { education } = this.state;
-        const newEducation = {
-            id: uniqid(),
-            degree: "",
-            school: "",
-            from: "",
-            to: "",
-        };
-        this.setState({
-            education: [...education, newEducation],
-        });
+  addEducation = (e) => {
+    e.preventDefault();
+    const { education } = this.state;
+    const newEducation = {
+      id: uniqid(),
+      degree: "",
+      school: "",
+      from: "",
+      to: "",
     };
+    this.setState({
+      education: [...education, newEducation],
+    });
+  };
 
-    removeEducation = (e) => {
-        const { education } = this.state;
-        const id = e.target.dataset.id;
-        const updatedEducation = education.filter((item) => item.id !== id);
-        this.setState({
-            education: updatedEducation,
-        });
-    };
+  removeEducation = (e) => {
+    const { education } = this.state;
+    const id = e.target.dataset.id;
+    const updatedEducation = education.filter((item) => item.id !== id);
+    this.setState({
+      education: updatedEducation,
+    });
+  };
 
   downloadAsPdf = () => {
     const cv = document.querySelector(".print");
@@ -174,7 +174,8 @@ class CvForm extends Component {
   };
 
   render() {
-    const { generalInfo, imagePreviewUrl, summary, experience, education } = this.state;
+    const { generalInfo, imagePreviewUrl, summary, experience, education } =
+      this.state;
 
     return (
       <div>
@@ -208,14 +209,14 @@ class CvForm extends Component {
               />
             </div>
             <div className="education">
-                <div className="title">Education</div>
-                <div className="line"></div>
-                <Education
-                    education={education}
-                    onEducationChange={this.onEducationChange}
-                    addEducation={this.addEducation}
-                    removeEducation={this.removeEducation}
-                />
+              <div className="title">Education</div>
+              <div className="line"></div>
+              <Education
+                education={education}
+                onEducationChange={this.onEducationChange}
+                addEducation={this.addEducation}
+                removeEducation={this.removeEducation}
+              />
             </div>
           </div>
         </div>
@@ -238,6 +239,7 @@ class CvForm extends Component {
               imagePreviewUrl={imagePreviewUrl}
               summary={summary}
               experience={experience}
+                education={education}
             />
           </div>
         </div>
