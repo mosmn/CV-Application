@@ -97,7 +97,7 @@ class CvForm extends Component {
             </div>
           </div>
           <div className="preview">
-            <CvPreview {...generalInfo} />
+            <CvPreview {...generalInfo} imagePreviewUrl={imagePreviewUrl} />
           </div>
         </div>
       </div>

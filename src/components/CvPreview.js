@@ -1,16 +1,24 @@
 import "../styles/CvPreview.css";
 
 const CvPreview = (props) => {
-  const { name, title, phone, email, linkedin, location, photo } = props;
+  const { name, title, phone, email, linkedin, location, file, imagePreviewUrl } = props;
   return (
     <div className="print">
-      <div className="name">{name}</div>
-      <div className="title">{title}</div>
-      <div className="phone">{phone}</div>
-      <div className="email">{email}</div>
-      <div className="linkedin">{linkedin}</div>
-      <div className="location">{location}</div>
-      <div className="photo">{photo}</div>
+      <div className="general-info-preview">
+        <div className="info-preview">
+          <div className="name-preview">{name}</div>
+          <div className="title-preview">{title}</div>
+          <div className="phone-preview">{phone}</div>
+          <div className="email-preview">{email}</div>
+          <div className="linkedin-preview">{linkedin}</div>
+          <div className="location-preview">{location}</div>
+        </div>
+        <div className="photo-preview">
+          <div className="img-wrap-preview img-upload-preview">
+            <img src={imagePreviewUrl} alt="pp" />
+            </div>
+          </div>
+      </div>
     </div>
   );
 };
