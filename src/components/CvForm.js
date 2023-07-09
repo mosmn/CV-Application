@@ -74,17 +74,13 @@ class CvForm extends Component {
 
   onExperienceChange = (e) => {
     const { name, value } = e.target;
-    const { experience } = this.state;
     const index = e.target.dataset.index;
-    const updatedExperience = experience.map((item, i) => {
-      if (index === i) {
-        return {
-          ...item,
-          [name]: value,
-        };
-      }
-      return item;
-    });
+    const { experience } = this.state;
+    const updatedExperience = [...experience];
+    updatedExperience[index] = {
+      ...updatedExperience[index],
+      [name]: value,
+    };
     this.setState({
       experience: updatedExperience,
     });
@@ -108,10 +104,9 @@ class CvForm extends Component {
   };
 
   removeExperience = (e) => {
-    e.preventDefault();
     const { experience } = this.state;
-    const index = e.target.dataset.index;
-    const updatedExperience = experience.filter((item, i) => index !== i);
+    const id = e.target.dataset.id;
+    const updatedExperience = experience.filter((item) => item.id !== id);
     this.setState({
       experience: updatedExperience,
     });
@@ -156,7 +151,12 @@ class CvForm extends Component {
             <div className="experience">
               <div className="title">Experience</div>
               <div className="line"></div>
-                <Experience experience={experience} onExperienceChange={this.onExperienceChange} addExperience={this.addExperience} removeExperience={this.removeExperience} />
+              <Experience
+                experience={experience}
+                onExperienceChange={this.onExperienceChange}
+                addExperience={this.addExperience}
+                removeExperience={this.removeExperience}
+              />
             </div>
           </div>
         </div>

@@ -3,7 +3,8 @@ import React, { Component } from "react";
 
 class Experience extends Component {
   render() {
-    const { experience, onExperienceChange, addExperience, removeExperience } = this.props;
+    const { experience, onExperienceChange, addExperience, removeExperience } =
+      this.props;
 
     return (
       <div>
