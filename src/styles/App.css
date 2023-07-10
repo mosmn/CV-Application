@@ -13,3 +13,9 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
+
+@media (min-width: 768px) {
+  .App {
+    justify-content: center;
+  }
+}

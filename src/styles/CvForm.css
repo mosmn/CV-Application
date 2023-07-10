@@ -79,7 +79,7 @@
 
 .previewContainer {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 10px;
   left: 0;
   right: 0;
@@ -95,7 +95,7 @@
 }
 
 .btns {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,4 +155,41 @@
 .education .line {
   height: 2px;
   background-color: #b15a5a;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-btns {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .previewBtn,
+  .previewBtnInside {
+    width: 40px;
+    height: 40px;
+  }
+
+  .previewBtn .icon,
+  .previewBtnInside .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cv {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .summary,
+  .experience,
+  .education {
+    width: 100%;
+  }
 }
