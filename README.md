@@ -1,10 +1,10 @@
 # CV Application
 
-This project is a CV application where users can create and edit their CV by adding general information, educational experience, and practical experience. The application is built using React and utilizes class components for the implementation.
+The CV application is a user-friendly tool built with React that enables individuals to effortlessly create and customize their CV online. With features like input fields for general information, sections for work experience and education, and a real-time CV preview, users can easily tailor their CV to highlight their skills and achievements. Additionally, the application allows users to download their CV as a PDF, providing a convenient way to save and share their professional profile with potential employers. Simplify the process of crafting an impressive CV and make a lasting impression with the CV application.
 
 ## Live Demo
 
-A live demo of the CV Application can be found [here]().
+A live demo of the CV Application can be found [here](https://mosmn.github.io/CV-Application/).
 
 ## Screenshots
 
