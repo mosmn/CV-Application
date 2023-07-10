@@ -1,8 +1,10 @@
 .print {
   width: 794px;
-  height: 1123px;
+  min-height: 1123px;
+  height: 100%;
   background-color: #ffffff;
   padding: 30px;
+  box-sizing: border-box;
   margin: 30px auto;
   box-shadow: 0 0 900px 900px rgba(0, 0, 0, 0.4);
 }

@@ -35,6 +35,15 @@ class CvForm extends Component {
           to: "",
           description: "",
         },
+        {
+            id: uniqid(),
+            jobTitle: "",
+            company: "",
+            city: "",
+            from: "",
+            to: "",
+            description: "",
+          },
       ],
       education: [
         {
@@ -161,6 +170,59 @@ class CvForm extends Component {
     });
   };
 
+  generateRandom = () => {
+    const randomGeneralInfo = {
+      name: "John Doe",
+      title: "Web Developer",
+      phone: "123-456-7890",
+      email: "johndoe@example.com",
+      linkedin: "linkedin.com/in/johndoe",
+      location: "New York City",
+      file: "",
+      imagePreviewUrl: "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
+    };
+  
+    const randomSummary = "Experienced web developer with a passion for creating user-friendly and visually appealing websites. Skilled in HTML, CSS, and JavaScript, with a focus on front-end development. Proven track record of delivering high-quality projects on time and within budget.";
+  
+    const randomExperience = [
+      {
+        id: uniqid(),
+        jobTitle: "Front-end Developer",
+        company: "ABC Company",
+        city: "New York",
+        from: "2018-01-01",
+        to: "2020-12-31",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      },
+      {
+        id: uniqid(),
+        jobTitle: "UI Designer",
+        company: "XYZ Agency",
+        city: "San Francisco",
+        from: "2016-01-01",
+        to: "2017-12-31",
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      },
+    ];
+  
+    const randomEducation = [
+      {
+        id: uniqid(),
+        degree: "Bachelor of Science",
+        school: "University of ABC",
+        from: "2012-01-01",
+        to: "2016-12-31",
+      },
+    ];
+  
+    this.setState({
+      generalInfo: randomGeneralInfo,
+      summary: randomSummary,
+      experience: randomExperience,
+      education: randomEducation,
+    });
+  };  
+
   downloadAsPdf = () => {
     const cv = document.querySelector(".print");
     const options = {
@@ -176,27 +238,37 @@ class CvForm extends Component {
   render() {
     const { generalInfo, imagePreviewUrl, summary, experience, education } =
       this.state;
+      const { name, title, phone, email, linkedin, location } = generalInfo;
+      const generalInfoInputValues = { name, title, phone, email, linkedin, location };
 
     return (
       <div>
         <div className="formContainer">
-          <div className="previewBtn" onClick={this.togglePreview}>
+            <div className="form-btns">
+            <div className="previewBtn" onClick={this.togglePreview}>
             <img
               className="icon"
               src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
               alt="preview"
             />
           </div>
+          <div className="generate-random">
+            <button className="randomBtn" onClick={this.generateRandom}>
+                Generate random CV
+            </button>
+            </div>
+            </div>
           <div className="cv">
             <GeneralInfo
               onInfoChange={this.onInfoChange}
               uploadPic={this.photoUpload}
               src={imagePreviewUrl}
+              inputValues={generalInfoInputValues}
             />
             <div className="summary">
               <div className="title">Summary</div>
               <div className="line"></div>
-              <Summary onSummaryChange={this.onSummaryChange} />
+              <Summary onSummaryChange={this.onSummaryChange} value={summary}/>
             </div>
             <div className="experience">
               <div className="title">Experience</div>

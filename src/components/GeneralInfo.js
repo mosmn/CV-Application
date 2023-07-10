@@ -19,7 +19,7 @@ class GeneralInfo extends Component {
   };
 
   render() {
-    const { onInfoChange, uploadPic, src } = this.props;
+    const { onInfoChange, uploadPic, src, inputValues } = this.props;
     const { isFocused } = this.state;
 
     return (
@@ -34,36 +34,42 @@ class GeneralInfo extends Component {
               type="text"
               name="name"
               placeholder="Name"
+              value={inputValues.name}
               onChange={onInfoChange}
             />
             <input
               type="text"
               name="title"
               placeholder="The role you're applying for"
+              value={inputValues.title}
               onChange={onInfoChange}
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone"
+              value={inputValues.phone}
               onChange={onInfoChange}
             />
             <input
               type="text"
               name="email"
               placeholder="Email"
+              value={inputValues.email}
               onChange={onInfoChange}
             />
             <input
               type="text"
               name="linkedin"
               placeholder="LinkedIn"
+              value={inputValues.linkedin}
               onChange={onInfoChange}
             />
             <input
               type="text"
               name="location"
               placeholder="Location"
+              value={inputValues.location}
               onChange={onInfoChange}
             />
           </div>
