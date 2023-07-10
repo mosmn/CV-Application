@@ -8,6 +8,12 @@ A live demo of the CV Application can be found [here]().
 
 ## Screenshots
 
+![initial](/intiail.png)
+
+![filled](/filled.png)
+
+![prev](/prev.png)
+
 ## Tech Stack
 
 - React
