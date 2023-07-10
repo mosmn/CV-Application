@@ -8,7 +8,7 @@ const CvPreview = (props) => {
     email,
     linkedin,
     location,
-    imagePreviewUrl,
+    src,
     summary,
     experience,
     education,
@@ -26,7 +26,7 @@ const CvPreview = (props) => {
         </div>
         <div className="photo-preview">
           <div className="img-wrap-preview img-upload-preview">
-            <img src={imagePreviewUrl} alt="pp" />
+            <img src={src} alt="pp" />
           </div>
         </div>
       </div>

@@ -6,7 +6,9 @@ import Experience from "./Experience";
 import Education from "./Education";
 import CvPreview from "./CvPreview";
 import html2pdf from "html2pdf.js";
-import uniqid from "uniqid";
+import uniqid from "uniqid"
+import userImage from "../imgs/user.png";
+import Man from "../imgs/man.jpeg";
 
 class CvForm extends Component {
   constructor(props) {
@@ -21,8 +23,7 @@ class CvForm extends Component {
         linkedin: "",
         location: "",
         file: "",
-        imagePreviewUrl:
-          "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
+        imagePreviewUrl: userImage,
       },
       summary: "",
       experience: [
@@ -68,8 +69,11 @@ class CvForm extends Component {
     const file = e.target.files[0];
     reader.onloadend = () => {
       this.setState({
-        file: file,
-        imagePreviewUrl: reader.result,
+        generalInfo: {
+            ...this.state.generalInfo,
+            file: file,
+            imagePreviewUrl: reader.result,
+        },
       });
     };
     reader.readAsDataURL(file);
@@ -179,7 +183,7 @@ class CvForm extends Component {
       linkedin: "linkedin.com/in/johndoe",
       location: "New York City",
       file: "",
-      imagePreviewUrl: "https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true",
+      imagePreviewUrl: Man,
     };
   
     const randomSummary = "Experienced web developer with a passion for creating user-friendly and visually appealing websites. Skilled in HTML, CSS, and JavaScript, with a focus on front-end development. Proven track record of delivering high-quality projects on time and within budget.";
@@ -236,10 +240,10 @@ class CvForm extends Component {
   };
 
   render() {
-    const { generalInfo, imagePreviewUrl, summary, experience, education } =
+    const { generalInfo, summary, experience, education } =
       this.state;
-      const { name, title, phone, email, linkedin, location } = generalInfo;
-      const generalInfoInputValues = { name, title, phone, email, linkedin, location };
+      const { name, title, phone, email, linkedin, location, imagePreviewUrl } = generalInfo;
+      const generalInfoInputValues = { name, title, phone, email, linkedin, location, imagePreviewUrl };
 
     return (
       <div>
@@ -308,7 +312,7 @@ class CvForm extends Component {
           <div className="preview">
             <CvPreview
               {...generalInfo}
-              imagePreviewUrl={imagePreviewUrl}
+              src={imagePreviewUrl}
               summary={summary}
               experience={experience}
                 education={education}
